@@ -111,6 +111,25 @@ public class Program {
 						        System.out.println(" Livro atualizado com sucesso!");
 						    }
 						    break;
+					case 3:
+						 System.out.println("\n[ EXCLUIR LIVRO ]");
+						    scanner.nextLine(); 
+						    
+						    System.out.print("Digite o título do livro que deseja excluir: ");
+						     tituloBusca = scanner.nextLine();
+						    
+						     livroEncontrado = buscarLivroPorTitulo(tituloBusca, acervo);
+						    
+						    if (livroEncontrado == null) {
+						        System.out.println(" Erro: Livro não encontrado no acervo.");
+						        System.out.println();
+						    } else {
+						        System.out.println("Livro encontrado! Excluindo: " + livroEncontrado.getTitulo());
+						        acervo.remove(livroEncontrado);
+						        System.out.println();
+						      
+						    }
+						    break;
 						
 					default:
 						System.out.println("Opção inválida! Tente novamente.");
