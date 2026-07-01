@@ -89,7 +89,7 @@ Exemplos:
 # Conceitos abordados neste projeto:
 - [x] Classes
 
-- [ ]  Objetos
+- [x]  Objetos
 
 - [x]  Encapsulamento
 
@@ -107,11 +107,11 @@ Exemplos:
 
 - [ ]  Interfaces
 
-- [ ]  Enum
+- [x]  Enum
 
 - [ ]  Composição
 
-- [ ]  Arrays ou Listas
+- [x]  Arrays ou Listas
 
 - [ ]  Mapas
 
@@ -139,7 +139,7 @@ Exemplos:
 
 - [ ]  toString
 
-- [ ]  Métodos estáticos
+- [x]  Métodos estáticos
 
 - [ ]  Funções
 
