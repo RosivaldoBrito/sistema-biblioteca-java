@@ -87,69 +87,68 @@ Exemplos:
 ---
 
 # Conceitos abordados neste projeto:
+- [x] Classes
 
-✅ Classes
+- [ ]  Objetos
 
-✅ Objetos
+- [x]  Encapsulamento
 
-✅ Encapsulamento
+- [x]  Construtores
 
-✅ Construtores
+- [x]  this
 
-✅ this
+- [ ]  Sobrecarga
 
-✅ Sobrecarga
+- [ ]  Herança
 
-✅ Herança
+- [ ]  Polimorfismo
 
-✅ Polimorfismo
+- [ ]  Classes abstratas
 
-✅ Classes abstratas
+- [ ]  Interfaces
 
-✅ Interfaces
+- [ ]  Enum
 
-✅ Enum
+- [ ]  Composição
 
-✅ Composição
+- [ ]  Arrays ou Listas
 
-✅ Arrays ou Listas
+- [ ]  Mapas
 
-✅ Mapas
+- [ ]  Conjuntos
 
-✅ Conjuntos
+- [ ]  Generics
 
-✅ Generics
+- [ ]  Datas (LocalDate)
 
-✅ Datas (LocalDate)
+- [ ]  StringBuilder
 
-✅ StringBuilder
+- [ ]  Tratamento de exceções
 
-✅ Tratamento de exceções
+- [ ]  Exceções customizadas
 
-✅ Exceções customizadas
+- [ ]  Leitura e gravação de arquivos
 
-✅ Leitura e gravação de arquivos
+- [ ]  Streams
 
-✅ Streams
+- [ ]  Lambdas
 
-✅ Lambdas
+- [ ]  Comparable
 
-✅ Comparable
+- [ ]  HashCode e Equals
 
-✅ HashCode e Equals
+- [ ]  toString
 
-✅ toString
+- [ ]  Métodos estáticos
 
-✅ Métodos estáticos
+- [ ]  Funções
 
-✅ Funções
+- [ ]  if
 
-✅ if
+- [ ]  switch
 
-✅ switch
+- [ ]  while
 
-✅ while
+- [ ]  for
 
-✅ for
-
-✅ do while
+- [ ]  do while
