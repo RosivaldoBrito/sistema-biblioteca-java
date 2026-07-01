@@ -141,6 +141,23 @@ public class Program {
 						}
 						break;
 
+					case 5:
+						System.out.println("\n[ INICIANDO BUSCA POR TÍTULO ]");
+						scanner.nextLine();
+
+						System.out.print("Digite o título do livro que deseja BUSCAR: ");
+						tituloBusca = scanner.nextLine();
+
+						livroEncontrado = buscarLivroPorTitulo(tituloBusca, acervo);
+
+						if (livroEncontrado == null) {
+							System.out.println(" Erro: Livro não encontrado no acervo.");
+							System.out.println();
+						} else {
+							System.out.println("Livro encontrado! ");
+							System.out.println(livroEncontrado);
+
+						}
 					}
 				}
 
@@ -165,6 +182,15 @@ public class Program {
 	}
 
 	public static Livro buscarLivroPorTitulo(String tituloProcurado, List<Livro> lista) {
+		for (Livro livro : lista) {
+			if (livro.getTitulo().equalsIgnoreCase(tituloProcurado)) {
+				return livro;
+			}
+		}
+		return null;
+	}
+
+	public static Livro buscarLivroPorTitlo(String tituloProcurado, List<Livro> lista) {
 		for (Livro livro : lista) {
 			if (livro.getTitulo().equalsIgnoreCase(tituloProcurado)) {
 				return livro;
