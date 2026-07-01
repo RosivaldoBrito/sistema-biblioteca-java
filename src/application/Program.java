@@ -71,70 +71,76 @@ public class Program {
 						String categoriaString = scanner.nextLine().toUpperCase();
 
 						Categoria categoriaEnum = Categoria.valueOf(categoriaString);
-						
+
 						System.out.print("Ano de publicação yyyy:");
 						int anoPublicacao = scanner.nextInt();
-						
+
 						System.out.print("Quantidade em estoque: ");
 						int quantidadeEmEstoque = scanner.nextInt();
-						
+
 						acervo.add(new Livro(titulo, autor, categoriaEnum, anoPublicacao, quantidadeEmEstoque));
 						System.out.println();
 						System.out.println("Livro registrado com sucesso!");
 
 						break;
 					case 2:
-						  System.out.println("\n[ MODIFICAR LIVRO ]");
-						    scanner.nextLine(); 
-						    
-						    System.out.print("Digite o título do livro que deseja modificar: ");
-						    String tituloBusca = scanner.nextLine();
-						    
-						    Livro livroEncontrado = buscarLivroPorTitulo(tituloBusca, acervo);
-						    
-						    if (livroEncontrado == null) {
-						        System.out.println(" Erro: Livro não encontrado no acervo.");
-						        System.out.println();
-						    } else {
-						        System.out.println("Livro encontrado: " + livroEncontrado.getTitulo());
-						        
-						        System.out.print("Digite o NOVO autor (ou aperte Enter para manter): ");
-						        String novoAutor = scanner.nextLine();
-						        
-						        System.out.print("Digite a NOVA quantidade em estoque: ");
-						        int novaQuantidade = scanner.nextInt();
-						        
-						       
-						        livroEncontrado.setAutor(novoAutor);
-						        livroEncontrado.setQuantidadeEmEstoque(novaQuantidade);
-						        
-						        System.out.println(" Livro atualizado com sucesso!");
-						    }
-						    break;
-					case 3:
-						 System.out.println("\n[ EXCLUIR LIVRO ]");
-						    scanner.nextLine(); 
-						    
-						    System.out.print("Digite o título do livro que deseja excluir: ");
-						     tituloBusca = scanner.nextLine();
-						    
-						     livroEncontrado = buscarLivroPorTitulo(tituloBusca, acervo);
-						    
-						    if (livroEncontrado == null) {
-						        System.out.println(" Erro: Livro não encontrado no acervo.");
-						        System.out.println();
-						    } else {
-						        System.out.println("Livro encontrado! Excluindo: " + livroEncontrado.getTitulo());
-						        acervo.remove(livroEncontrado);
-						        System.out.println();
-						      
-						    }
-						    break;
-						
-					default:
-						System.out.println("Opção inválida! Tente novamente.");
+						System.out.println("\n[ MODIFICAR LIVRO ]");
+						scanner.nextLine();
+
+						System.out.print("Digite o título do livro que deseja modificar: ");
+						String tituloBusca = scanner.nextLine();
+
+						Livro livroEncontrado = buscarLivroPorTitulo(tituloBusca, acervo);
+
+						if (livroEncontrado == null) {
+							System.out.println(" Erro: Livro não encontrado no acervo.");
+							System.out.println();
+						} else {
+							System.out.println("Livro encontrado: " + livroEncontrado.getTitulo());
+
+							System.out.print("Digite o NOVO autor (ou aperte Enter para manter): ");
+							String novoAutor = scanner.nextLine();
+
+							System.out.print("Digite a NOVA quantidade em estoque: ");
+							int novaQuantidade = scanner.nextInt();
+
+							livroEncontrado.setAutor(novoAutor);
+							livroEncontrado.setQuantidadeEmEstoque(novaQuantidade);
+
+							System.out.println(" Livro atualizado com sucesso!");
+						}
 						break;
-						
+					case 3:
+						System.out.println("\n[ EXCLUIR LIVRO ]");
+						scanner.nextLine();
+
+						System.out.print("Digite o título do livro que deseja excluir: ");
+						tituloBusca = scanner.nextLine();
+
+						livroEncontrado = buscarLivroPorTitulo(tituloBusca, acervo);
+
+						if (livroEncontrado == null) {
+							System.out.println(" Erro: Livro não encontrado no acervo.");
+							System.out.println();
+						} else {
+							System.out.println("Livro encontrado! Excluindo: " + livroEncontrado.getTitulo());
+							acervo.remove(livroEncontrado);
+							System.out.println();
+
+						}
+						break;
+					case 4:
+						System.out.println("\n[ LISTANDO LIVROS ]");
+
+						if (acervo.isEmpty()) {
+							System.out.println("Nenhum livro cadastrado no acervo ainda.");
+						} else {
+							for (Livro livro : acervo) {
+								System.out.println(livro);
+							}
+						}
+						break;
+
 					}
 				}
 
@@ -157,9 +163,10 @@ public class Program {
 			}
 		}
 	}
+
 	public static Livro buscarLivroPorTitulo(String tituloProcurado, List<Livro> lista) {
-		for(Livro livro: lista) {
-			if(livro.getTitulo().equalsIgnoreCase(tituloProcurado)) {
+		for (Livro livro : lista) {
+			if (livro.getTitulo().equalsIgnoreCase(tituloProcurado)) {
 				return livro;
 			}
 		}
