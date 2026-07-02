@@ -158,10 +158,10 @@ public class Program {
 							System.out.println(livroEncontrado);
 
 						}
+						System.out.println();
 						break;
 					case 6:
 						System.out.println("\n[ BUSCAR POR AUTOR ]");
-						
 
 						System.out.print("Digite o nome do autor que deseja buscar: ");
 						String autorBusca = scanner.nextLine();
@@ -177,6 +177,27 @@ public class Program {
 							}
 						}
 						break;
+					case 7:
+						System.out.println("\n[ BUSCAR POR CATEGORIA ]");
+						scanner.nextLine();
+						System.out.println(
+								"Categorias válidas: ROMANCE, FANTASIA, FICCAO, SUSPENSE, TERROR, DISTOPIA, AVENTURA");
+						System.out.print("Digite o nome da categoria que deseja buscar:");
+						String categoriaBusca = scanner.nextLine().toUpperCase();
+						Categoria categoria = Categoria.valueOf(categoriaBusca);
+
+						List<Livro> categoriaResultado = buscarLivrosPorCategoria(categoria, acervo);
+						if (categoriaResultado.isEmpty()) {
+							System.out.println("Erro: Nenhum livro encontrado para a categoria " + categoriaBusca);
+						} else {
+							System.out.println(" Livros encontrados da categoria: " + categoriaBusca);
+							for (Livro livro : categoriaResultado) {
+								System.out.println(livro);
+								System.out.println();
+							}
+						}
+						break;
+
 					}
 				}
 
@@ -218,6 +239,18 @@ public class Program {
 			}
 		}
 		return livrosEncontrados;
+	}
+
+	public static List<Livro> buscarLivrosPorCategoria(Categoria categoria, List<Livro> lista) {
+		List<Livro> livrosEncontrados = new ArrayList<>();
+
+		for (Livro livro : lista) {
+			if (livro.getCategoria().equals(categoria)) {
+				livrosEncontrados.add(livro);
+			}
+		}
+		return livrosEncontrados;
+
 	}
 
 }
