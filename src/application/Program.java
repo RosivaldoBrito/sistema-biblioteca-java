@@ -158,9 +158,10 @@ public class Program {
 							System.out.println(livroEncontrado);
 
 						}
+						break;
 					case 6:
 						System.out.println("\n[ BUSCAR POR AUTOR ]");
-						scanner.nextLine();
+						
 
 						System.out.print("Digite o nome do autor que deseja buscar: ");
 						String autorBusca = scanner.nextLine();
