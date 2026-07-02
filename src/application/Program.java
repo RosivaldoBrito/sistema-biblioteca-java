@@ -158,6 +158,24 @@ public class Program {
 							System.out.println(livroEncontrado);
 
 						}
+					case 6:
+						System.out.println("\n[ BUSCAR POR AUTOR ]");
+						scanner.nextLine();
+
+						System.out.print("Digite o nome do autor que deseja buscar: ");
+						String autorBusca = scanner.nextLine();
+
+						List<Livro> resultados = buscarLivrosPorAutor(autorBusca, acervo);
+
+						if (resultados.isEmpty()) {
+							System.out.println(" Erro: Nenhum livro encontrado para o autor '" + autorBusca + "'.\n");
+						} else {
+							System.out.println(" Livros encontrados do autor " + autorBusca + ":");
+							for (Livro livro : resultados) {
+								System.out.println(livro);
+							}
+						}
+						break;
 					}
 				}
 
@@ -190,13 +208,15 @@ public class Program {
 		return null;
 	}
 
-	public static Livro buscarLivroPorTitlo(String tituloProcurado, List<Livro> lista) {
+	public static List<Livro> buscarLivrosPorAutor(String autorProcurado, List<Livro> lista) {
+		List<Livro> livrosEncontrados = new ArrayList<>();
+
 		for (Livro livro : lista) {
-			if (livro.getTitulo().equalsIgnoreCase(tituloProcurado)) {
-				return livro;
+			if (livro.getAutor().equalsIgnoreCase(autorProcurado)) {
+				livrosEncontrados.add(livro);
 			}
 		}
-		return null;
+		return livrosEncontrados;
 	}
 
 }
